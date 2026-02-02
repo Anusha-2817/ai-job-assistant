@@ -25,22 +25,18 @@ def clean_skills(text):
 
 
 def job_analyzer(job_text):
-    prompt = f"""
-    Extract the top 5 technical skills from this job description:
-    {job_text}
-    """
+    skills = ["python", "flask", "apis", "machine learning", "sql"]
+    job_text = job_text.lower()
 
-    response = generator(prompt, max_length=200)
-    return response[0]["generated_text"]
+    return [skill for skill in skills if skill in job_text]
+
 
 def resume_analyzer(resume_text):
-    prompt = f"""
-    Extract the top 5 technical skills from this resume:
-    {resume_text}
-    """
+    skills = ["python", "pandas", "machine learning", "sql", "excel"]
+    resume_text = resume_text.lower()
 
-    response = generator(prompt, max_length=200)
-    return response[0]["generated_text"]
+    return [skill for skill in skills if skill in resume_text]
+
 
 def cover_letter_writer(job_text, resume_text):
     prompt = f"""You are a job applicant.
@@ -79,13 +75,14 @@ Candidate resume:
     return text.strip()
 
 def skill_matcher(job_skills, resume_skills):
-    job_list = clean_skills(job_skills)
-    resume_list = clean_skills(resume_skills)
+    job_set = {s.strip().lower() for s in job_skills}
+    resume_set = {s.strip().lower() for s in resume_skills}
 
-    matched = [s for s in job_list if s in resume_list]
-    missing = [s for s in job_list if s not in resume_list]
+    matched = job_set & resume_set
+    missing = job_set - resume_set
 
     return {
-        "matched_skills": matched,
-        "missing_skills": missing
+        "matched_skills": list(matched),
+        "missing_skills": list(missing),
+        "match_percent": round(len(matched) / max(len(job_set), 1) * 100, 2)
     }
