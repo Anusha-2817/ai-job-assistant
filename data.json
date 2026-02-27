@@ -1,0 +1,188 @@
+{
+  "python": {
+    "category": "Programming",
+    "related_skills": ["flask", "pandas", "numpy", "airflow", "spark"],
+    "aliases": ["python3"],
+    "used_in_roles": ["Data Engineer", "Backend Developer", "ML Engineer"]
+  },
+
+  "sql": {
+    "category": "Database",
+    "related_skills": [
+      "mysql",
+      "postgresql",
+      "query tuning",
+      "database optimization"
+    ],
+    "aliases": ["structured query language"],
+    "used_in_roles": ["Data Analyst", "Data Engineer", "Database Administrator"]
+  },
+
+  "postgresql": {
+    "category": "Database",
+    "related_skills": ["sql", "database optimization"],
+    "aliases": ["postgres"],
+    "used_in_roles": ["Data Engineer", "Backend Developer"]
+  },
+
+  "mysql": {
+    "category": "Database",
+    "related_skills": ["sql"],
+    "aliases": [],
+    "used_in_roles": ["Backend Developer", "Database Administrator"]
+  },
+
+  "data analysis": {
+    "category": "Data",
+    "related_skills": ["statistics", "pandas", "numpy", "data visualization"],
+    "aliases": ["data analytics"],
+    "used_in_roles": ["Data Analyst", "Data Scientist"]
+  },
+
+  "pandas": {
+    "category": "Data Analytics",
+    "related_skills": ["data analysis", "EDA", "data cleaning"],
+    "aliases": [],
+    "used_in_roles": ["Data Analyst", "Data Scientist", "Data Engineer"]
+  },
+
+  "numpy": {
+    "category": "Data Analytics",
+    "related_skills": ["numerical computing", "arrays"],
+    "aliases": [],
+    "used_in_roles": ["Data Scientist", "ML Engineer"]
+  },
+
+  "data warehousing": {
+    "category": "Data Engineering",
+    "related_skills": ["etl", "data modeling", "data pipeline"],
+    "aliases": ["data warehouse"],
+    "used_in_roles": ["Data Engineer"]
+  },
+
+  "etl": {
+    "category": "Data Engineering",
+    "related_skills": ["data pipeline", "data warehousing", "airflow"],
+    "aliases": ["etl pipeline"],
+    "used_in_roles": ["Data Engineer"]
+  },
+
+  "data pipeline": {
+    "category": "Data Engineering",
+    "related_skills": ["etl", "airflow", "spark"],
+    "aliases": ["pipelines"],
+    "used_in_roles": ["Data Engineer"]
+  },
+
+  "airflow": {
+    "category": "Data Engineering",
+    "related_skills": ["etl", "workflow orchestration"],
+    "aliases": ["apache airflow"],
+    "used_in_roles": ["Data Engineer"]
+  },
+
+  "spark": {
+    "category": "Big Data",
+    "related_skills": ["hadoop", "distributed computing"],
+    "aliases": ["apache spark"],
+    "used_in_roles": ["Data Engineer", "Big Data Engineer"]
+  },
+
+  "hadoop": {
+    "category": "Big Data",
+    "related_skills": ["spark", "distributed systems"],
+    "aliases": [],
+    "used_in_roles": ["Big Data Engineer"]
+  },
+
+  "aws": {
+    "category": "Cloud",
+    "related_skills": ["s3", "ec2", "cloud deployment"],
+    "aliases": ["amazon web services"],
+    "used_in_roles": ["Cloud Engineer", "Data Engineer"]
+  },
+
+  "s3": {
+    "category": "Cloud",
+    "related_skills": ["aws", "cloud storage"],
+    "aliases": ["amazon s3"],
+    "used_in_roles": ["Data Engineer"]
+  },
+
+  "ec2": {
+    "category": "Cloud",
+    "related_skills": ["aws", "cloud deployment"],
+    "aliases": ["amazon ec2"],
+    "used_in_roles": ["Cloud Engineer"]
+  },
+
+  "docker": {
+    "category": "DevOps",
+    "related_skills": ["containerization", "kubernetes"],
+    "aliases": [],
+    "used_in_roles": ["DevOps Engineer", "Backend Developer", "Data Engineer"]
+  },
+
+  "kubernetes": {
+    "category": "DevOps",
+    "related_skills": ["docker", "container orchestration"],
+    "aliases": ["k8s"],
+    "used_in_roles": ["DevOps Engineer"]
+  },
+
+  "git": {
+    "category": "DevOps",
+    "related_skills": ["version control", "ci/cd"],
+    "aliases": ["github", "gitlab"],
+    "used_in_roles": ["Software Engineer", "Data Engineer"]
+  },
+
+  "ci/cd": {
+    "category": "DevOps",
+    "related_skills": ["git", "automation"],
+    "aliases": ["continuous integration", "continuous deployment"],
+    "used_in_roles": ["DevOps Engineer"]
+  },
+
+  "power bi": {
+    "category": "Analytics",
+    "related_skills": ["dashboarding", "data visualization"],
+    "aliases": [],
+    "used_in_roles": ["Data Analyst"]
+  },
+
+  "tableau": {
+    "category": "Analytics",
+    "related_skills": ["dashboarding", "data visualization"],
+    "aliases": [],
+    "used_in_roles": ["Data Analyst"]
+  },
+
+  "data visualization": {
+    "category": "Analytics",
+    "related_skills": ["power bi", "tableau"],
+    "aliases": ["visualization"],
+    "used_in_roles": ["Data Analyst", "Data Scientist"]
+  },
+
+  "scalability": {
+    "category": "Architecture",
+    "related_skills": ["distributed systems", "performance optimization"],
+    "aliases": [],
+    "used_in_roles": ["Data Engineer", "Backend Developer"]
+  },
+
+  "distributed systems": {
+    "category": "Architecture",
+    "related_skills": ["scalability", "spark"],
+    "aliases": [],
+    "used_in_roles": ["Data Engineer"]
+  },
+
+  "performance optimization": {
+    "category": "Architecture",
+    "related_skills": ["query tuning", "scalability"],
+    "aliases": [],
+    "used_in_roles": ["Backend Developer", "Data Engineer"]
+  }
+}
