@@ -34,9 +34,16 @@
 
   "data analysis": {
     "category": "Data",
-    "related_skills": ["statistics", "pandas", "numpy", "data visualization"],
+    "related_skills": [
+      "statistics",
+      "pandas",
+      "numpy",
+      "data visualization",
+      "reporting",
+      "sql"
+    ],
     "aliases": ["data analytics"],
-    "used_in_roles": ["Data Analyst", "Data Scientist"]
+    "used_in_roles": ["Data Analyst", "Data Scientist", "Data Engineer"]
   },
 
   "pandas": {
@@ -184,5 +191,239 @@
     "related_skills": ["query tuning", "scalability"],
     "aliases": [],
     "used_in_roles": ["Backend Developer", "Data Engineer"]
+  },
+  "github": {
+    "category": "DevOps",
+    "related_skills": ["git", "version control"],
+    "aliases": ["github.com"],
+    "used_in_roles": [
+      "Backend Developer",
+      "Data Engineer",
+      "Data Analyst",
+      "Software Engineer"
+    ]
+  },
+  "gitlab": {
+    "category": "DevOps",
+    "related_skills": ["git", "version control"],
+    "aliases": ["gitlab.com"],
+    "used_in_roles": [
+      "Backend Developer",
+      "Data Engineer",
+      "Data Analyst",
+      "Software Engineer"
+    ]
+  },
+  "microsoft excel": {
+    "category": "Analytics",
+    "related_skills": ["data analysis", "reporting"],
+    "aliases": ["excel"],
+    "used_in_roles": ["Data Analyst", "Business Analyst", "Data Engineer"]
+  },
+  "react js": {
+    "category": "Frontend",
+    "related_skills": [
+      "javascript",
+      "html",
+      "css",
+      "vite",
+      "frontend development"
+    ],
+    "aliases": ["react", "reactjs"],
+    "used_in_roles": [
+      "Frontend Developer",
+      "Full Stack Developer",
+      "Software Engineer"
+    ]
+  },
+  "javascript": {
+    "category": "Frontend",
+    "related_skills": ["react js", "html", "css", "frontend development"],
+    "aliases": ["js"],
+    "used_in_roles": [
+      "Frontend Developer",
+      "Full Stack Developer",
+      "Software Engineer"
+    ]
+  },
+  "html": {
+    "category": "Frontend",
+    "related_skills": ["css", "javascript", "frontend development"],
+    "aliases": [],
+    "used_in_roles": [
+      "Frontend Developer",
+      "Full Stack Developer",
+      "UI Developer"
+    ]
+  },
+  "css": {
+    "category": "Frontend",
+    "related_skills": ["html", "javascript", "frontend development"],
+    "aliases": [],
+    "used_in_roles": [
+      "Frontend Developer",
+      "Full Stack Developer",
+      "UI Developer"
+    ]
+  },
+  "vite": {
+    "category": "Frontend",
+    "related_skills": ["react js", "javascript", "frontend development"],
+    "aliases": [],
+    "used_in_roles": ["Frontend Developer", "Full Stack Developer"]
+  },
+  "node js": {
+    "category": "Backend",
+    "related_skills": ["javascript", "express", "rest api", "mongodb"],
+    "aliases": ["nodejs"],
+    "used_in_roles": [
+      "Backend Developer",
+      "Full Stack Developer",
+      "Software Engineer"
+    ]
+  },
+
+  "express": {
+    "category": "Backend",
+    "related_skills": ["node js", "rest api", "mongodb"],
+    "aliases": ["express js"],
+    "used_in_roles": ["Backend Developer", "Full Stack Developer"]
+  },
+
+  "mongodb": {
+    "category": "Database",
+    "related_skills": ["node js", "express", "nosql"],
+    "aliases": [],
+    "used_in_roles": [
+      "Backend Developer",
+      "Full Stack Developer",
+      "Database Developer"
+    ]
+  },
+
+  "rest api": {
+    "category": "Backend",
+    "related_skills": ["node js", "express", "flask", "django"],
+    "aliases": ["restful api", "restful apis"],
+    "used_in_roles": ["Backend Developer", "Full Stack Developer"]
+  },
+
+  "typescript": {
+    "category": "Frontend",
+    "related_skills": ["javascript", "react js", "node js"],
+    "aliases": ["ts"],
+    "used_in_roles": ["Frontend Developer", "Full Stack Developer"]
+  },
+
+  "redux": {
+    "category": "Frontend",
+    "related_skills": ["react js", "javascript"],
+    "aliases": [],
+    "used_in_roles": ["Frontend Developer", "Full Stack Developer"]
+  },
+
+  "tailwind css": {
+    "category": "Frontend",
+    "related_skills": ["css", "html", "react js"],
+    "aliases": ["tailwind"],
+    "used_in_roles": ["Frontend Developer", "UI Developer"]
+  },
+
+  "junit": {
+    "category": "Testing",
+    "related_skills": ["unit testing", "java"],
+    "aliases": [],
+    "used_in_roles": ["QA Engineer", "Software Engineer"]
+  },
+
+  "pytest": {
+    "category": "Testing",
+    "related_skills": ["python", "unit testing"],
+    "aliases": [],
+    "used_in_roles": ["QA Engineer", "Software Engineer"]
+  },
+
+  "selenium": {
+    "category": "Testing",
+    "related_skills": ["automation testing", "python", "java"],
+    "aliases": [],
+    "used_in_roles": ["QA Engineer", "Automation Engineer"]
+  },
+
+  "cypress": {
+    "category": "Testing",
+    "related_skills": ["javascript", "automation testing"],
+    "aliases": [],
+    "used_in_roles": ["QA Engineer", "Frontend Developer"]
+  },
+
+  "react native": {
+    "category": "Mobile",
+    "related_skills": ["javascript", "react js"],
+    "aliases": [],
+    "used_in_roles": ["Mobile Developer", "Full Stack Developer"]
+  },
+
+  "flutter": {
+    "category": "Mobile",
+    "related_skills": ["dart"],
+    "aliases": [],
+    "used_in_roles": ["Mobile Developer"]
+  },
+
+  "kotlin": {
+    "category": "Mobile",
+    "related_skills": ["android"],
+    "aliases": [],
+    "used_in_roles": ["Android Developer", "Mobile Developer"]
+  },
+
+  "swift": {
+    "category": "Mobile",
+    "related_skills": ["ios"],
+    "aliases": [],
+    "used_in_roles": ["iOS Developer", "Mobile Developer"]
+  },
+
+  "tensorflow": {
+    "category": "AI/ML",
+    "related_skills": ["python", "deep learning"],
+    "aliases": [],
+    "used_in_roles": ["ML Engineer", "Data Scientist"]
+  },
+
+  "pytorch": {
+    "category": "AI/ML",
+    "related_skills": ["python", "deep learning"],
+    "aliases": [],
+    "used_in_roles": ["ML Engineer", "Data Scientist"]
+  },
+
+  "scikit learn": {
+    "category": "AI/ML",
+    "related_skills": ["python", "machine learning"],
+    "aliases": ["sklearn"],
+    "used_in_roles": ["ML Engineer", "Data Scientist"]
+  },
+
+  "nlp": {
+    "category": "AI/ML",
+    "related_skills": ["machine learning", "text processing"],
+    "aliases": ["natural language processing"],
+    "used_in_roles": ["ML Engineer", "Data Scientist"]
+  },
+
+  "jenkins": {
+    "category": "DevOps",
+    "related_skills": ["ci/cd", "automation"],
+    "aliases": [],
+    "used_in_roles": ["DevOps Engineer"]
+  },
+
+  "terraform": {
+    "category": "DevOps",
+    "related_skills": ["infrastructure as code", "cloud"],
+    "aliases": [],
+    "used_in_roles": ["DevOps Engineer", "Cloud Engineer"]
   }
 }

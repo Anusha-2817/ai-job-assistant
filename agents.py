@@ -79,18 +79,20 @@ def clean_skills(skill_list):
 def job_analyzer(job_text, ontology_agent):
     skills = ontology_agent.extract_from_text(job_text)
 
-    if not skills:
-        skills = extract_skills(job_text)
-
     return clean_skills(skills)
 
-def resume_analyzer(skills_text, ontology_agent):
+def resume_analyzer(sections_dict, full_text, ontology_agent):
+    # Get skills section
+    skills_text = sections_dict.get("skills_text", "")
+    # Primary ontology extraction
     skills = ontology_agent.extract_from_text(skills_text)
-
+    # Fallback to full resume scan
     if not skills:
-        skills = extract_skills(skills_text)
+        skills = ontology_agent.extract_from_text(full_text)
+    # Clean
+    skills = clean_skills(skills)
 
-    return clean_skills(skills)
+    return skills
 
 import re
 
@@ -119,101 +121,142 @@ def extract_profile(resume_text):
 
 
 def build_draft(profile, job_text, user_name):
-    job_title_match = re.search(r"looking for a ([A-Za-z\s\-]+)", job_text, re.IGNORECASE)
-    job_title = job_title_match.group(1) if job_title_match else "this role"
 
-    skills_text = ", ".join(profile["skills"]) if profile["skills"] else "Python and data tools"
+    import re
+
+    # Extract job title safely
+    job_title_match = re.search(r"looking for a ([A-Za-z\s\-]+)", job_text, re.IGNORECASE)
+    job_title = job_title_match.group(1).strip() if job_title_match else "Software Engineer"
+
+    role = profile["role"] if profile["role"] else "Software Engineer"
+    years = profile["years"] if profile["years"] else "several"
+
+    skills_text = ", ".join(profile["skills"]) if profile["skills"] else "Python and backend development"
 
     draft = f"""
 Dear Hiring Manager,
 
-I am excited to apply for the {job_title}. As a {profile['role']} with {profile['years']} years of experience, I specialize in designing scalable data solutions and Python-based ETL workflows.
+I am writing to express my interest in the {job_title}. As a {role} with {years} years of experience, I have developed strong skills in building scalable and maintainable software systems.
 
-My technical expertise includes {skills_text}. I focus on building reliable, maintainable data pipelines that enable faster analytics and informed decision-making.
+Throughout my experience, I have worked extensively with technologies such as {skills_text}. I have contributed to backend development, API implementation, database integration, and frontend features while focusing on clean architecture and performance optimization.
 
-I am confident that my background aligns well with your requirements and I am eager to contribute to your team’s data engineering initiatives.
+I am passionate about writing reliable code, collaborating with cross-functional teams, and continuously improving development processes. I am confident that my technical background and problem-solving skills would allow me to contribute effectively to your engineering team.
+
+Thank you for your time and consideration. I look forward to the opportunity to discuss how I can add value to your organization.
+
+Sincerely,  
+{user_name}
+"""
+
+    return draft.strip()
+
+def cover_letter_writer(
+    job_text,
+    resume_text,
+    user_name,
+    match_data,
+    enriched_job_skills,
+    enriched_resume_skills
+):
+    from collections import Counter
+
+    generator = get_generator()
+
+    # --- Extract structured info ---
+    profile = extract_profile(resume_text)
+
+    match_percentage = match_data["match_percentage"]
+    matched = match_data["matched_skills"]
+    missing = match_data["missing_skills"]
+
+    # --- Category grouping from enriched resume ---
+    category_map = {}
+    for skill in enriched_resume_skills:
+        category = skill["category"]
+        name = skill["skill"]
+        category_map.setdefault(category, []).append(name)
+
+    dominant_categories = Counter(
+        [skill["category"] for skill in enriched_resume_skills]
+    ).most_common(2)
+
+    # --- Strength Line Based on Match ---
+    if match_percentage >= 75:
+        strength_line = "My background aligns strongly with the technical requirements of this role."
+    elif match_percentage >= 50:
+        strength_line = "My experience aligns with several key technical requirements of this role."
+    else:
+        strength_line = "While I continue to expand my expertise, I bring a solid technical foundation relevant to this role."
+
+    # --- Category Highlight ---
+    category_lines = []
+    for category, skills in category_map.items():
+        category_lines.append(f"{category} ({', '.join(skills[:3])})")
+
+    skills_line = ""
+    if category_lines:
+        skills_line = "My technical strengths include " + ", ".join(category_lines) + "."
+
+    # --- Growth Line (Missing Skills Awareness) ---
+    growth_line = ""
+    if missing:
+        growth_line = f"I am also actively strengthening my expertise in areas such as {', '.join(missing[:3])}."
+
+    # --- Deterministic Draft ---
+    draft = f"""
+Dear Hiring Manager,
+
+I am excited to apply for this opportunity. {strength_line}
+
+{skills_line}
+
+{growth_line} I am committed to continuous learning and delivering reliable, maintainable software solutions.
+
+Thank you for your consideration. I look forward to the opportunity to contribute to your team.
 
 Sincerely,
 {user_name}
-"""
-    return draft.strip()
+""".strip()
 
-def cover_letter_writer(job_text, resume_text, user_name):
-    generator = get_generator()
+    text = draft  # fallback safety
 
-    # Extract structured profile
-    profile = extract_profile(resume_text)
-    # Build clean deterministic draft
-    draft = build_draft(profile, job_text, user_name)
-    # Safety initialization (UnboundLocalError!)
-    text = draft  
-
+    # --- Optional LLM Polishing ---
     try:
-        # Step 3: Polish with LLM
         polish_prompt = f"""
-You are a professional HR expert.
-
-Rewrite the following draft into a strong, polished, and complete professional cover letter.
+Rewrite the following draft into a polished professional cover letter.
 
 Rules:
-- Minimum 250 words
-- Maximum 350 words
-- Keep 4 paragraphs
-- Do NOT shorten the content
-- Expand details naturally
-- Do NOT summarize
-- Do NOT use bullet points
-- Do NOT repeat phrases
-- Do NOT use placeholders
-- Keep the applicant name as {user_name}
-- Keep it formal and confident
+- Do NOT add new experience
+- Do NOT invent projects
+- Do NOT introduce skills not mentioned
+- Keep it 4 paragraphs
+- Keep tone formal
+- Keep name as {user_name}
 
----DRAFT START---
+DRAFT:
 {draft}
----DRAFT END---
 """
 
         response = generator(
             polish_prompt,
-            max_new_tokens=400,
-            min_length=250,
-            do_sample=False,
-            temperature=0.0,
-            top_p=0.9,
-            repetition_penalty=1.4,
-            no_repeat_ngram_size=3,
-            early_stopping=True
+            max_new_tokens=300,
+            temperature=0.2,
+            do_sample=True
         )
 
         generated_text = response[0]["generated_text"].strip()
-        cut_markers = ["---", "FINAL VERDICT", "DRAFT START", "DRAFT END"]
-        for marker in cut_markers:
-            if marker in generated_text:
-                generated_text = generated_text.split(marker)[0]
 
-        generated_text = generated_text.strip()
-        # Fallback if model output is too short or weird
-        if len(generated_text.split()) >= 150:
+        if len(generated_text.split()) >= 120:
             text = generated_text
 
     except Exception as e:
-        print("Cover letter generation failed:", e)
-        # fallback automatically stays as draft
+        print("Cover letter polishing failed:", e)
 
-    # Clean spacing
+    # --- Clean formatting ---
     text = text.replace("\r", "")
     text = "\n".join([line.strip() for line in text.split("\n")])
     lines = [line for line in text.split("\n") if line.strip() != ""]
     text = "\n\n".join(lines)
-
-    # Remove banned phrases properly
-    banned = [
-        "I am looking for",
-        "looking for a developer",
-    ]
-
-    for phrase in banned:
-        text = text.replace(phrase, "")
 
     return text
 

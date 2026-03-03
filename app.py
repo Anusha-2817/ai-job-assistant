@@ -37,7 +37,7 @@ def generate_docx(text, user_name):
     date_paragraph.alignment = WD_ALIGN_PARAGRAPH.RIGHT
     date_run = date_paragraph.add_run(datetime.today().strftime("%B %d, %Y"))
     date_run.font.name = "Times New Roman"
-    date_run.font.size = Pt(12)
+    date_run.font.size = Pt(14)
 
     # Add spacing
     document.add_paragraph("")
@@ -62,7 +62,7 @@ st.set_page_config( #layout
 )
 
 st.title("🤖 AI Resume Analyzer")
-st.write("Paste a job description and your resume to see how well you match.")
+st.write("Paste a job description and upload your resume (.docx) to see how well you match.")
 user_name = st.text_input("Your Full Name (for Cover Letter)")
 col1, col2 = st.columns(2)
 
@@ -74,18 +74,20 @@ with col1:
     )
 
 with col2:
-    resume_text = st.text_area(
-        "📄 Resume",
-        height=250,
-        placeholder="Paste your resume here..."
+    uploaded_file = st.file_uploader(
+        "Upload Resume (.docx only)",
+        type=["docx"]
     )
+    if uploaded_file is not None:
+        with open("temp_resume.docx", "wb") as f:
+            f.write(uploaded_file.getbuffer())
 
 if st.button("🔍 Analyze"):
-    if not job_text or not resume_text:
+    if not job_text or uploaded_file is None:
         st.warning("Please enter both job description and resume.")
     else:
         with st.spinner("Analyzing..."):
-            result = coordinator(job_text, resume_text, ontology_agent, user_name)
+            result = coordinator(job_text, "temp_resume.docx", ontology_agent, user_name)
 
         st.success("Done!")
 
