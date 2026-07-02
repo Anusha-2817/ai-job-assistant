@@ -1,0 +1,720 @@
+{
+  "python": {
+    "category": "Programming",
+    "related_skills": {
+      "flask": 0.95,
+      "pandas": 0.8,
+      "numpy": 0.8,
+      "airflow": 0.45,
+      "spark": 0.35
+    },
+    "aliases": {
+      "python3": 1.0
+    },
+    "used_in_roles": ["Data Engineer", "Backend Developer", "ML Engineer"]
+  },
+
+  "sql": {
+    "category": "Database",
+    "related_skills": {
+      "mysql": 0.9,
+      "postgresql": 0.9,
+      "query tuning": 0.6,
+      "database optimization": 0.55
+    },
+    "aliases": {
+      "structured query language": 1.0
+    },
+    "used_in_roles": ["Data Analyst", "Data Engineer", "Database Administrator"]
+  },
+
+  "postgresql": {
+    "category": "Database",
+    "related_skills": {
+      "sql": 0.9,
+      "database optimization": 0.55
+    },
+    "aliases": {
+      "postgres": 1.0
+    },
+    "used_in_roles": ["Data Engineer", "Backend Developer"]
+  },
+
+  "mysql": {
+    "category": "Database",
+    "related_skills": {
+      "sql": 0.9
+    },
+    "aliases": {},
+    "used_in_roles": ["Backend Developer", "Database Administrator"]
+  },
+
+  "data analysis": {
+    "category": "Data",
+    "related_skills": {
+      "statistics": 0.7,
+      "pandas": 0.85,
+      "numpy": 0.8,
+      "data visualization": 0.75,
+      "reporting": 0.7,
+      "sql": 0.65
+    },
+    "aliases": {
+      "data analytics": 1.0
+    },
+    "used_in_roles": ["Data Analyst", "Data Scientist", "Data Engineer"]
+  },
+
+  "pandas": {
+    "category": "Data Analytics",
+    "related_skills": {
+      "data analysis": 0.85,
+      "eda": 0.7,
+      "data cleaning": 0.7
+    },
+    "aliases": {},
+    "used_in_roles": ["Data Analyst", "Data Scientist", "Data Engineer"]
+  },
+
+  "numpy": {
+    "category": "Data Analytics",
+    "related_skills": {
+      "numerical computing": 0.7,
+      "arrays": 0.65
+    },
+    "aliases": {},
+    "used_in_roles": ["Data Scientist", "ML Engineer"]
+  },
+
+  "docker": {
+    "category": "DevOps",
+    "related_skills": {
+      "containerization": 0.9,
+      "kubernetes": 0.75
+    },
+    "aliases": {},
+    "used_in_roles": ["DevOps Engineer", "Backend Developer", "Data Engineer"]
+  },
+
+  "kubernetes": {
+    "category": "DevOps",
+    "related_skills": {
+      "docker": 0.75,
+      "container orchestration": 0.9
+    },
+    "aliases": {
+      "k8s": 1.0
+    },
+    "used_in_roles": ["DevOps Engineer"]
+  },
+
+  "react js": {
+    "category": "Frontend",
+    "related_skills": {
+      "javascript": 0.9,
+      "html": 0.7,
+      "css": 0.7,
+      "vite": 0.6,
+      "frontend development": 0.8
+    },
+    "aliases": {
+      "react": 1.0,
+      "reactjs": 1.0
+    },
+    "used_in_roles": [
+      "Frontend Developer",
+      "Full Stack Developer",
+      "Software Engineer"
+    ]
+  },
+
+  "javascript": {
+    "category": "Frontend",
+    "related_skills": {
+      "react js": 0.9,
+      "html": 0.7,
+      "css": 0.7,
+      "frontend development": 0.8
+    },
+    "aliases": {
+      "js": 1.0
+    },
+    "used_in_roles": [
+      "Frontend Developer",
+      "Full Stack Developer",
+      "Software Engineer"
+    ]
+  },
+
+  "node js": {
+    "category": "Backend",
+    "related_skills": {
+      "javascript": 0.8,
+      "express": 0.9,
+      "rest api": 0.85,
+      "mongodb": 0.7
+    },
+    "aliases": {
+      "nodejs": 1.0
+    },
+    "used_in_roles": [
+      "Backend Developer",
+      "Full Stack Developer",
+      "Software Engineer"
+    ]
+  },
+
+  "express": {
+    "category": "Backend",
+    "related_skills": {
+      "node js": 0.9,
+      "rest api": 0.85,
+      "mongodb": 0.7
+    },
+    "aliases": {
+      "express js": 1.0
+    },
+    "used_in_roles": ["Backend Developer", "Full Stack Developer"]
+  },
+
+  "mongodb": {
+    "category": "Database",
+    "related_skills": {
+      "node js": 0.7,
+      "express": 0.7,
+      "nosql": 0.85,
+      "sql": 0.35,
+      "postgresql": 0.75,
+      "mysql": 0.75
+    },
+    "aliases": {"nosql": 0.8},
+    "used_in_roles": [
+      "Backend Developer",
+      "Full Stack Developer",
+      "Database Developer"
+    ]
+  },
+
+  "rest api": {
+    "category": "Backend",
+    "related_skills": {
+      "node js": 0.85,
+      "express": 0.85,
+      "flask": 0.75,
+      "django": 0.75
+    },
+    "aliases": {
+      "restful api": 1.0,
+      "restful apis": 1.0
+    },
+    "used_in_roles": ["Backend Developer", "Full Stack Developer"]
+  },
+
+  "typescript": {
+    "category": "Frontend",
+    "related_skills": {
+      "javascript": 0.9,
+      "react js": 0.8,
+      "node js": 0.7
+    },
+    "aliases": {
+      "ts": 1.0
+    },
+    "used_in_roles": ["Frontend Developer", "Full Stack Developer"]
+  },
+
+  "tailwind css": {
+    "category": "Frontend",
+    "related_skills": {
+      "css": 0.9,
+      "html": 0.7,
+      "react js": 0.7
+    },
+    "aliases": {
+      "tailwind": 1.0
+    },
+    "used_in_roles": ["Frontend Developer", "UI Developer"]
+  },
+
+  "tensorflow": {
+    "category": "AI/ML",
+    "related_skills": {
+      "python": 0.75,
+      "deep learning": 0.95
+    },
+    "aliases": {},
+    "used_in_roles": ["ML Engineer", "Data Scientist"]
+  },
+
+  "pytorch": {
+    "category": "AI/ML",
+    "related_skills": {
+      "python": 0.75,
+      "deep learning": 0.95
+    },
+    "aliases": {},
+    "used_in_roles": ["ML Engineer", "Data Scientist"]
+  },
+
+  "scikit learn": {
+    "category": "AI/ML",
+    "related_skills": {
+      "python": 0.55,
+      "machine learning": 0.95
+    },
+    "aliases": {
+      "sklearn": 1.0
+    },
+    "used_in_roles": ["ML Engineer", "Data Scientist"]
+  },
+
+  "nlp": {
+    "category": "AI/ML",
+    "related_skills": {
+      "machine learning": 0.8,
+      "text processing": 0.85
+    },
+    "aliases": {
+      "natural language processing": 1.0
+    },
+    "used_in_roles": ["ML Engineer", "Data Scientist"]
+  },
+
+  "fastapi": {
+  "category": "Backend",
+  "related_skills": {
+    "python": 0.9,
+    "rest api": 0.9,
+    "backend orchestration": 0.75
+  },
+  "aliases": {},
+  "used_in_roles": [
+    "Backend Developer",
+    "Software Engineer"
+  ]
+},
+
+"streamlit": {
+  "category": "Frontend",
+  "related_skills": {
+    "python": 0.8,
+    "dashboard": 0.7
+  },
+  "aliases": {},
+  "used_in_roles": [
+    "Data Scientist",
+    "ML Engineer"
+  ]
+},
+
+"postman": {
+  "category": "API Testing",
+  "related_skills": {
+    "rest api": 0.8,
+    "swagger ui": 0.7
+  },
+  "aliases": {},
+  "used_in_roles": [
+    "Backend Developer",
+    "QA Engineer"
+  ]
+},
+
+"swagger ui": {
+  "category": "API Documentation",
+  "related_skills": {
+    "rest api": 0.85,
+    "postman": 0.7
+  },
+  "aliases": {
+    "swagger": 1.0
+  },
+  "used_in_roles": [
+    "Backend Developer"
+  ]
+},
+
+"backend orchestration": {
+  "category": "Backend",
+  "related_skills": {
+    "fastapi": 0.75,
+    "rest api": 0.7,
+    "microservices": 0.6
+  },
+  "aliases": {},
+  "used_in_roles": [
+    "Backend Developer",
+    "Software Engineer"
+  ]
+},
+
+"nlp pipelines": {
+  "category": "AI/ML",
+  "related_skills": {
+    "nlp": 0.9,
+    "python": 0.75
+  },
+  "aliases": {
+    "natural language pipelines": 0.95
+  },
+  "used_in_roles": [
+    "ML Engineer",
+    "Data Scientist"
+  ]
+},
+
+"ocr": {
+  "category": "AI/ML",
+  "related_skills": {
+    "computer vision": 0.8,
+    "text extraction": 0.75
+  },
+  "aliases": {
+    "optical character recognition": 1.0
+  },
+  "used_in_roles": [
+    "ML Engineer"
+  ]
+},
+"rag": {
+  "category": "AI/ML",
+  "aliases": {
+    "retrieval augmented generation": 1.0,
+    "rag pipelines": 0.95
+  },
+  "related_skills": {
+    "vector database": 0.9,
+    "llm": 0.95,
+    "embedding models": 0.85
+  }
+},
+"vector database": {
+  "category": "AI Infrastructure",
+  "aliases": {
+    "vector db": 1.0,
+    "embedding database": 0.9
+  },
+  "related_skills": {
+    "pinecone": 0.95,
+    "weaviate": 0.95,
+    "qdrant": 0.9,
+    "rag": 0.9,
+    "embedding models": 0.85,
+    "postgresql": 0.4
+  }
+},
+"llm": {
+  "category": "Generative AI",
+  "aliases": {
+    "large language models": 1.0,
+    "llm api": 0.95,
+    "llm integration": 0.95
+  },
+  "related_skills": {
+    "openai": 0.95,
+    "claude": 0.95,
+    "gemini": 0.95,
+    "nlp pipelines": 0.7,
+    "rag": 0.85
+  }
+},
+"microservices": {
+  "category": "Backend",
+  "aliases": {
+    "microservice architecture": 1.0
+  },
+  "related_skills": {
+    "rest api": 0.9,
+    "docker": 0.85,
+    "kubernetes": 0.9
+  }
+},
+"grpc": {
+  "category": "Backend",
+  "aliases": {
+    "grpc api": 1.0
+  },
+  "related_skills": {
+    "microservices": 0.9,
+    "backend orchestration": 0.85
+  }
+},
+"ci/cd": {
+  "category": "DevOps",
+  "aliases": {
+    "cicd": 1.0,
+    "continuous integration": 0.9,
+    "continuous deployment": 0.9,
+    "continuous delivery": 0.9,
+    "ci cd pipelines": 0.95
+  },
+  "related_skills": {
+    "docker": 0.85,
+    "kubernetes": 0.85,
+    "github actions": 0.9,
+    "jenkins": 0.85,
+    "deployment pipelines": 0.9
+  },
+  "used_in_roles": [
+    "DevOps Engineer",
+    "Backend Engineer",
+    "ML Engineer"
+  ]
+},
+"aws": {
+  "category": "Cloud",
+  "aliases": {
+    "amazon web services": 1.0
+  },
+  "related_skills": {
+    "docker": 0.8,
+    "kubernetes": 0.85,
+    "ci/cd": 0.8,
+    "cloud deployment": 0.9,
+    "devops": 0.75
+  },
+  "used_in_roles": [
+    "Cloud Engineer",
+    "Backend Engineer",
+    "ML Engineer",
+    "DevOps Engineer"
+  ]
+},
+
+"gcp": {
+  "category": "Cloud",
+  "aliases": {
+    "google cloud": 1.0,
+    "google cloud platform": 1.0
+  },
+  "related_skills": {
+    "kubernetes": 0.9,
+    "docker": 0.8,
+    "ci/cd": 0.8,
+    "cloud deployment": 0.9,
+    "mlops": 0.75
+  },
+  "used_in_roles": [
+    "Cloud Engineer",
+    "ML Engineer",
+    "Backend Engineer"
+  ]
+},
+
+"azure": {
+  "category": "Cloud",
+  "aliases": {
+    "microsoft azure": 1.0
+  },
+  "related_skills": {
+    "docker": 0.8,
+    "kubernetes": 0.85,
+    "ci/cd": 0.8,
+    "cloud deployment": 0.9
+  },
+  "used_in_roles": [
+    "Cloud Engineer",
+    "Backend Engineer",
+    "DevOps Engineer"
+  ]
+},
+
+"redis": {
+  "category": "Database",
+  "aliases": {
+    "redis cache": 0.95,
+    "in-memory database": 0.8
+  },
+  "related_skills": {
+    "postgresql": 0.5,
+    "mongodb": 0.45,
+    "backend orchestration": 0.7,
+    "microservices": 0.75,
+    "caching": 0.9
+  },
+  "used_in_roles": [
+    "Backend Engineer",
+    "Software Engineer",
+    "DevOps Engineer"
+  ]
+},
+
+"graphql": {
+  "category": "Backend",
+  "aliases": {
+    "graphql api": 1.0
+  },
+  "related_skills": {
+    "rest api": 0.75,
+    "backend orchestration": 0.8,
+    "microservices": 0.7,
+    "fastapi": 0.55
+  },
+  "used_in_roles": [
+    "Backend Engineer",
+    "Full Stack Developer",
+    "Software Engineer"
+  ]
+},
+"jenkins": {
+  "category": "DevOps",
+  "aliases": {
+    "jenkins pipelines": 0.95,
+    "jenkins automation": 0.9
+  },
+  "related_skills": {
+    "ci/cd": 0.95,
+    "docker": 0.8,
+    "kubernetes": 0.75,
+    "github actions": 0.7,
+    "deployment pipelines": 0.9
+  },
+  "used_in_roles": [
+    "DevOps Engineer",
+    "Backend Engineer",
+    "ML Engineer"
+  ]
+},
+
+"github actions": {
+  "category": "DevOps",
+  "aliases": {
+    "github workflows": 0.95,
+    "github ci": 0.9
+  },
+  "related_skills": {
+    "ci/cd": 0.95,
+    "jenkins": 0.7,
+    "docker": 0.75,
+    "deployment pipelines": 0.85
+  },
+  "used_in_roles": [
+    "DevOps Engineer",
+    "Backend Engineer",
+    "Software Engineer"
+  ]
+},
+
+"airflow": {
+  "category": "Data Engineering",
+  "aliases": {
+    "apache airflow": 1.0,
+    "workflow orchestration": 0.85
+  },
+  "related_skills": {
+    "data pipelines": 0.9,
+    "etl": 0.85,
+    "python": 0.75,
+    "mlops": 0.75,
+    "data engineering": 0.85
+  },
+  "used_in_roles": [
+    "Data Engineer",
+    "ML Engineer",
+    "MLOps Engineer"
+  ]
+},
+
+"mlops": {
+  "category": "AI Infrastructure",
+  "aliases": {
+    "machine learning operations": 1.0,
+    "ml ops": 0.95
+  },
+  "related_skills": {
+    "airflow": 0.75,
+    "docker": 0.8,
+    "kubernetes": 0.85,
+    "ci/cd": 0.8,
+    "model deployment": 0.9,
+    "monitoring": 0.8
+  },
+  "used_in_roles": [
+    "ML Engineer",
+    "MLOps Engineer",
+    "AI Engineer"
+  ]
+},
+"prompt engineering": {
+  "category": "Generative AI",
+  "aliases": {
+    "prompt design": 0.95,
+    "llm prompting": 0.9,
+    "prompt optimization": 0.9
+  },
+  "related_skills": {
+    "llm": 0.9,
+    "rag": 0.8,
+    "openai": 0.85,
+    "claude": 0.8,
+    "gemini": 0.8,
+    "nlp pipelines": 0.7
+  },
+  "used_in_roles": [
+    "AI Engineer",
+    "Prompt Engineer",
+    "ML Engineer"
+  ]
+},
+
+"observability": {
+  "category": "DevOps",
+  "aliases": {
+    "system observability": 0.95,
+    "application observability": 0.9
+  },
+  "related_skills": {
+    "monitoring": 0.9,
+    "telemetry": 0.9,
+    "logging": 0.85,
+    "microservices": 0.7,
+    "mlops": 0.7
+  },
+  "used_in_roles": [
+    "DevOps Engineer",
+    "Backend Engineer",
+    "SRE"
+  ]
+},
+
+"monitoring": {
+  "category": "DevOps",
+  "aliases": {
+    "system monitoring": 0.95,
+    "performance monitoring": 0.9,
+    "application monitoring": 0.9
+  },
+  "related_skills": {
+    "telemetry": 0.85,
+    "observability": 0.9,
+    "logging": 0.8,
+    "mlops": 0.7,
+    "system reliability": 0.75
+  },
+  "used_in_roles": [
+    "DevOps Engineer",
+    "MLOps Engineer",
+    "Backend Engineer"
+  ]
+},
+
+"telemetry": {
+  "category": "DevOps",
+  "aliases": {
+    "application telemetry": 0.95,
+    "system telemetry": 0.9
+  },
+  "related_skills": {
+    "monitoring": 0.85,
+    "observability": 0.9,
+    "logging": 0.8,
+    "metrics collection": 0.85,
+    "system reliability": 0.75
+  },
+  "used_in_roles": [
+    "DevOps Engineer",
+    "Backend Engineer",
+    "SRE"
+  ]
+}
+}

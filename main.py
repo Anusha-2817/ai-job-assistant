@@ -1,13 +1,12 @@
 import json
-from agents import (
-    job_analyzer,
-    resume_analyzer,
-    cover_letter_writer,
-    skill_matcher,
-    SkillOntologyAgent
-)
-from Resume_parse import ResumeIngestionAgent
-with open("data.json", "r") as f:
+from agents.job_agent import job_analyzer
+from agents.resume_agent import resume_analyzer
+from agents.cover_letter_agent import cover_letter_writer
+from agents.scoring_agent import skill_matcher
+from agents.ontology_agent import SkillOntologyAgent
+
+from Resume_parser import ResumeIngestionAgent
+with open("data/data.json", "r") as f:
     ontology = json.load(f)
 
 ontology_agent = SkillOntologyAgent(ontology)

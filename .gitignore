@@ -5,3 +5,5 @@ resume_ingestion.py
 *.pdf
 *.docx
 test_ingestion.py
+
+temp_resume.docx

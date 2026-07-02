@@ -1,7 +1,7 @@
 import json
 import streamlit as st
 from main import coordinator
-from agents import SkillOntologyAgent
+from agents.ontology_agent import SkillOntologyAgent
 
 from docx import Document
 from docx.shared import Pt, Inches
@@ -10,7 +10,7 @@ from docx.oxml.ns import qn
 import io
 from datetime import datetime
 
-with open("data.json", "r") as f:
+with open("data/data.json", "r") as f:
     ontology_data = json.load(f)
 
 ontology_agent = SkillOntologyAgent(ontology_data)
@@ -138,22 +138,57 @@ if st.button("🔍 Analyze"):
         c5, c6 = st.columns(2)
 
         with c5:
-            st.markdown("###Matched Skills")
-            for skill in result["skill_match"]["matched_skills"]:
-                st.markdown(f"- {skill}")
+
+            st.markdown("### ✅ Matched Skills")
+
+            matched_skills = result["skill_match"]["matched_skills"]
+
+            if not matched_skills:
+                st.warning("No matched skills found.")
+
+            for match in matched_skills:
+
+                job_skill = match["job_skill"]
+                matched_with = match["matched_with"]
+                match_type = match["match_type"]
+                score = match["score"]
+
+                if match_type == "exact":
+
+                    st.markdown(
+                        f"""
+        - **{job_skill}**
+            - Match Type: Exact Match
+            - Confidence Score: {score}
+        """
+                    )
+
+                else:
+
+                    st.markdown(
+                        f"""
+        - **{job_skill}**
+            - Matched Via: `{matched_with}`
+            - Match Type: Semantic Match
+            - Confidence Score: {score}
+        """
+                    )
+
         with c6:
             st.markdown("###Missing Skills")
             if not missing_skills:
                     st.success("No missing skills 🎉 Great match!")
-            for skill in result["skill_match"]["missing_skills"]:
-                st.markdown(f"- {skill}")
-            for skill in enriched_job:
 
-                if skill["skill"] in missing_skills:
-                    st.markdown(
-                        f"- **{skill['skill']}**"
-                        f"  - Category: {skill['category']}"
-                    )
+            for skill in result["skill_match"]["missing_skills"]:
+
+                st.markdown(
+                    f"""
+            - **{skill['job_skill']}**
+                - Category: {skill['category']}
+            """
+                )
+
+
                 
         if match_percent >= 75:
             st.success("Strong Match 🚀")
