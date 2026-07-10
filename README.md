@@ -1,4 +1,4 @@
-# AI Job Assistant — Ontology-Driven Resume & JD Matcher
+#  OrchestrAI : AI Job Assistant - Ontology-Driven Resume & JD Matcher
 
 A multi-agent system that matches resumes to job descriptions and generates cover letters — using a **deterministic skill-ontology graph instead of embeddings.**
 
@@ -11,9 +11,9 @@ Most resume matchers use vector similarity (embeddings) to score skill matches. 
 
 Instead, it uses a hand-built **skill knowledge graph** — canonical skills, aliases, and related-skill relationships — to do matching that is:
 
-- **Explainable** — every match can be traced to a specific rule (exact / alias / related-skill), not a black-box similarity score
-- **Deterministic** — same input always produces the same output, no run-to-run drift
-- **Debuggable** — when a match is wrong, you can find and fix the exact rule, not retrain a model
+- **Explainable** - every match can be traced to a specific rule (exact / alias / related-skill), not a black-box similarity score
+- **Deterministic** - same input always produces the same output, no run-to-run drift
+- **Debuggable** - when a match is wrong, you can find and fix the exact rule, not retrain a model
 
 ```
 "python": {
