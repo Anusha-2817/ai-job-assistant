@@ -5,7 +5,7 @@ from agents.cover_letter_agent import cover_letter_writer
 from agents.scoring_agent import skill_matcher
 from agents.ontology_agent import SkillOntologyAgent
 
-from Resume_parser import ResumeIngestionAgent
+from agents.resume_parser_agent import ResumeIngestionAgent
 with open("data/data.json", "r") as f:
     ontology = json.load(f)
 

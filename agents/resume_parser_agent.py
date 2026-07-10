@@ -36,8 +36,8 @@ class ResumeIngestionAgent:
             "projects_text": r'^\s*(projects)\s*$'
         }
 
-        lines = text.split("\n")
-        current_section = None
+        lines = text.split("\n") # list of individual lines.
+        current_section = None # state variable
 
         for line in lines:
             clean_line = line.strip()
