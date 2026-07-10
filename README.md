@@ -3,7 +3,8 @@
 A multi-agent system that matches resumes to job descriptions and generates cover letters — using a **deterministic skill-ontology graph instead of embeddings.**
 
 ![App Screenshot](assets/demo_screenshot.png)
-
+![App Screenshot](assets/resume_matcher_data_flow.png)
+![App Screenshot](assets/demo.png)
 ## Why this is different
 
 Most resume matchers use vector similarity (embeddings) to score skill matches. This project deliberately doesn't.
